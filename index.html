@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raudinei Afonso - Currículo Profissional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ea 100%);
+            color: #1d1d1f;
+            line-height: 1.5;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: transparent;
+        }
+
+        /* Header Bar Idêntico */
+        header {
+            background: linear-gradient(180deg, #2c2c2e 0%, #1c1c1e 100%);
+            color: white;
+            padding: 12px 16px 8px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.15) 0%, rgba(48, 176, 199, 0.15) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .header-info h1 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 1px;
+            letter-spacing: -0.3px;
+        }
+
+        .header-info .subtitle {
+            font-size: 0.8em;
+            color: #86868b;
+            font-weight: 400;
+        }
+
+        .qr-box {
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 8px;
+            padding: 3px;
+            flex-shrink: 0;
+        }
+
+        .qr-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Seções com Sombras Suaves */
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 0 16px 12px 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 
+                        0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .section:first-of-type {
+            margin-top: 12px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 0.75em;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        /* Form Rows Minimalistas */
+        .info-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            width: 100px;
+            color: #1d1d1f;
+            font-size: 0.95em;
+            font-weight: 400;
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            flex: 1;
+            text-align: right;
+            color: #86868b;
+            font-size: 0.95em;
+        }
+
+        .info-value a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        /* Resumo Section */
+        .resumo-text {
+            color: #1d1d1f;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .resumo-highlight {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.05) 0%, rgba(0, 122, 255, 0.02) 100%);
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 3px solid #007AFF;
+            margin-top: 12px;
+        }
+
+        .resumo-highlight strong {
+            color: #007AFF;
+            font-weight: 600;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .card-item {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(245, 245, 247, 0.98) 100%);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .card-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 6px;
+        }
+
+        .card-description {
+            font-size: 0.75em;
+            color: #86868b;
+            line-height: 1.4;
+        }
+
+        /* Timeline iOS Style */
+        .timeline-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            font-size: 0.9em;
+            color: #007AFF;
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            font-size: 0.85em;
+            color: #86868b;
+            white-space: nowrap;
+            margin-left: 12px;
+        }
+
+        .timeline-description {
+            margin-top: 12px;
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-list li {
+            padding: 6px 0 6px 20px;
+            font-size: 0.9em;
+            color: #1d1d1f;
+            position: relative;
+        }
+
+        .timeline-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #007AFF;
+            font-weight: bold;
+        }
+
+        /* Curso Items */
+        .curso-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .curso-item {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.03) 0%, rgba(0, 122, 255, 0.01) 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 3px solid #007AFF;
+        }
+
+        .curso-title {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+        }
+
+        .curso-institution {
+            font-size: 0.85em;
+            color: #86868b;
+        }
+
+        /* Projeto Destaque - Stage Display Style */
+        .projeto-destaque {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(245, 245, 247, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 16px;
+            margin: 12px 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08),
+                        0 8px 32px rgba(0, 0, 0, 0.04),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .projeto-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .projeto-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .projeto-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .projeto-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .projeto-title-text {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1d1d1f;
+            line-height: 1.3;
+        }
+
+        .projeto-description {
+            font-size: 0.9em;
+            color: #1d1d1f;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .projeto-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .projeto-list li {
+            padding: 8px 0 8px 24px;
+            font-size: 0.9em;
+            color: #1d1d1f;
+            position: relative;
+        }
+
+        .projeto-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34C759;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 24px;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
+
+        .footer-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-info h1 {
+                font-size: 1.1em;
+            }
+
+            .header-info .subtitle {
+                font-size: 0.75em;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+
+            .timeline-date {
+                margin-left: 0;
+                margin-top: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header iOS Style -->
+        <header>
+            <div class="header-top">
+                <div class="header-info">
+                    <h1>Raudinei Afonso S. Pereira</h1>
+                    <div class="subtitle">Representante técnico de vendas 3</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Informações de Contato -->
+        <div class="section">
+            <div class="section-title">Contato</div>
+            <div class="info-row">
+                <div class="info-label">Telefone</div>
+                <div class="info-value">+55 (63) 98437-6572</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">E-mail</div>
+                <div class="info-value"><a href="/cdn-cgi/l/email-protection#186a796d7c61767d615870776c75797174367b7775"><span class="__cf_email__" data-cfemail="72001307160b1c170b321a1d061f131b1e5c111d1f">[email&#160;protected]</span></a></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">LinkedIn</div>
+                <div class="info-value"><a href="https://www.linkedin.com/in/raudinei" target="_blank">www.linkedin.com/in/raudinei</a></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Localização</div>
+                <div class="info-value">Porto Nacional, TO</div>
+            </div>
+        </div>
+
+        <!-- Sobre Mim -->
+        <div class="section">
+            <div class="section-title">Sobre Mim</div>
+            <div class="resumo-text">
+                Engenheiro Agrônomo com mais de 10 anos de experiência em insumos agrícolas, com foco em assistência técnica, posicionamento de produtos, relacionamento com produtores e planejamento de vendas. Perfil voltado à geração de demanda no campo, com atuação direta nas culturas de soja e milho.
+            </div>
+            <div class="resumo-highlight">
+                <strong>Especialidades:</strong> Capacidade de interpretar análises de solo e recomendar corretivos como calcário e gesso, além de fertilizantes, incluindo macronutrientes (fósforo e potássio) e micronutrientes, tanto para aplicação no solo quanto via foliar.
+            </div>
+        </div>
+
+        <!-- Diferenciais -->
+        <div class="section">
+            <div class="section-title">Diferenciais</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Presença Técnica Eficiente</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Atuação constante em campo, oferecendo soluções práticas e orientações que fortalecem a confiança do produtor.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Gestão Estratégica de Metas</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Metas superadas de forma recorrente com planejamento semanal e foco em rentabilidade sustentável.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Manutenção e Expansão de Carteira</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Gestão de carteira fiel com ampliação anual de novos produtores cadastrados.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Satisfação e Confiança dos Clientes</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Produtores buscam orientação técnica mesmo fora do meu portfólio, reforçando credibilidade e parceria.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competências -->
+        <div class="section">
+            <div class="section-title">Competências</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Comunicação Assertiva</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Habilidade de traduzir conceitos técnicos complexos em linguagem acessível para produtores rurais, facilitando a tomada de decisão.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Relacionamento Interpessoal</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Construção de vínculos sólidos e duradouros com clientes, baseados em confiança, respeito e entrega de resultados consistentes.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Organização e Planejamento</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Capacidade de gerenciar múltiplas demandas simultaneamente, priorizando atividades e cumprindo prazos com eficiência.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Proatividade</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Antecipação de necessidades dos clientes e identificação de oportunidades de negócio antes que sejam solicitadas.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Adaptabilidade</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Flexibilidade para ajustar estratégias conforme mudanças de mercado, clima e necessidades específicas de cada produtor.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Aprendizado Contínuo</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Busca constante por atualização técnica e novas metodologias para agregar valor ao atendimento e às recomendações.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Orientação para Resultados</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Foco em superar metas com planejamento estratégico e acompanhamento rigoroso de indicadores de desempenho.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Trabalho em Equipe</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Colaboração efetiva com equipes comerciais e técnicas, compartilhando conhecimentos e apoiando o desenvolvimento coletivo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Principais Conquistas -->
+        <div class="section">
+            <div class="section-title">Principais Conquistas</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Presença Técnica Eficiente</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Atuação constante em campo, oferecendo soluções práticas e orientações que fortalecem a confiança do produtor.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Gestão Estratégica de Metas</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Metas superadas de forma recorrente com planejamento semanal e foco em rentabilidade sustentável.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Manutenção e Expansão de Carteira</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Gestão de carteira fiel com ampliação anual de novos produtores cadastrados.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Satisfação e Confiança dos Clientes</div>
+                    </div>
+                </div>
+                <div class="timeline-description">
+                    <p style="font-size: 0.9em; color: #1d1d1f;">Produtores buscam orientação técnica mesmo fora do meu portfólio, reforçando credibilidade e parceria.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experiência Profissional -->
+        <div class="section">
+            <div class="section-title">Experiência Profissional</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Representante Técnico de Vendas 3</div>
+                        <div class="timeline-company">Nutrien</div>
+                    </div>
+                    <div class="timeline-date">06/2022 – Atual</div>
+                </div>
+                <div class="timeline-description">
+                    <ul class="timeline-list">
+                        <li>Atendimento técnico a produtores nas culturas de soja, milho e pastagem</li>
+                        <li>Posicionamento agronômico de produtos nutricionais e fisiológicos</li>
+                        <li>Gerenciamento de carteira ativa e planejamento de vendas</li>
+                        <li>Apoio técnico ao time comercial em campo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Consultor Técnico de Vendas</div>
+                        <div class="timeline-company">Sulgoiano Agro</div>
+                    </div>
+                    <div class="timeline-date">02/2015 – 05/2022</div>
+                </div>
+                <div class="timeline-description">
+                    <ul class="timeline-list">
+                        <li>Assistência técnica a produtores e visitas periódicas</li>
+                        <li>Geração de demanda por meio de demonstrações em lavoura</li>
+                        <li>Comercialização de insumos e prospecção de clientes</li>
+                        <li>Reforço da relação técnica-comercial com agricultores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Assistente Técnico de Vendas</div>
+                        <div class="timeline-company">Sulgoiano Agro - Goiatuba/GO</div>
+                    </div>
+                    <div class="timeline-date">01/2013 – 02/2015</div>
+                </div>
+                <div class="timeline-description">
+                    <ul class="timeline-list">
+                        <li>Tratamento de sementes e regulagem de implementos</li>
+                        <li>Suporte técnico ao consultor e acompanhamento de campo</li>
+                        <li>Geração de demanda inicial e ativação de produtores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formação -->
+        <div class="section">
+            <div class="section-title">Formação Acadêmica</div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Engenheiro Agrônomo</div>
+                        <div class="timeline-company">Unicerrado - Goiatuba</div>
+                    </div>
+                    <div class="timeline-date">2013</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desenvolvimento Profissional -->
+        <div class="section">
+            <div class="section-title">Desenvolvimento Profissional</div>
+            <div class="curso-list">
+                <div class="curso-item">
+                    <div class="curso-title">NutriSpecialist</div>
+                    <div class="curso-institution">Prof. Dr. Ismail Cakmak - Agroadvance (2022)</div>
+                </div>
+                <div class="curso-item">
+                    <div class="curso-title">Interpretação da Análise de Solo e Recomendação Agronômica</div>
+                    <div class="curso-institution">Agroadvance (2021)</div>
+                </div>
+                <div class="curso-item">
+                    <div class="curso-title">Vendas Consultivas em Insumos Agrícolas</div>
+                    <div class="curso-institution">Markestrat (2013)</div>
+                </div>
+                <div class="curso-item">
+                    <div class="curso-title">Instituto de Especialização em Vendas (IEV)</div>
+                    <div class="curso-institution">Programa completo de vendas técnicas</div>
+                </div>
+                <div class="curso-item">
+                    <div class="curso-title">Treinamento de Competências Interpessoais</div>
+                    <div class="curso-institution">Dale Carnegie (2022)</div>
+                </div>
+                <div class="curso-item">
+                    <div class="curso-title">Excel Avançado</div>
+                    <div class="curso-institution">Hashtag Treinamentos (2022)</div>
+                </div>
+                <div class="curso-item">
+                    <div class="curso-title">Programa de Aplicação Responsável</div>
+                    <div class="curso-institution">Dow AgroSciences & UNESP (2014)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projeto em Destaque - Stage Display -->
+        <div class="projeto-destaque">
+            <div class="section-title">Projeto em Destaque</div>
+            <div class="projeto-header">
+                <a href="https://afonsoraudinei.github.io/" target="_blank" class="projeto-logo" style="text-decoration: none; display: block;">
+                    <img src="logo.png" alt="Logo SoloForte">
+                </a>
+                <div class="projeto-title-text">
+                    Desenvolvimento de Soluções em Agricultura Digital – Projeto SoloForte
+                </div>
+            </div>
+            <div class="projeto-description">
+                Criação de um sistema integrado para gestão agrícola, combinando inteligência artificial, análise de solo, marketing georreferenciado e automação de dados. O projeto conecta tecnologia, agronomia e estratégia comercial para aumentar eficiência e geração de demanda.
+            </div>
+            <ul class="projeto-list">
+                <li>Desenvolvi soluções de IA e automação para análise de dados agronômicos e recomendações técnicas</li>
+                <li>Estruturei um mapa interativo de casos de sucesso, funcionando como vitrine digital regional</li>
+                <li>Implementei estratégias de monetização, integrando geração de leads e visibilidade comercial</li>
+                <li>Projet
