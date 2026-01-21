@@ -17,101 +17,9 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ea 100%);
         color: #1d1d1f;
-        line-height: 1.5;
+        line-height: 1.4;
         padding: 0;
         -webkit-font-smoothing: antialiased;
-    }
-
-    /* Formato A4 */
-    @page {
-        size: A4;
-        margin: 20mm 15mm;
-    }
-
-    @media print {
-        body {
-            background: white;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 100%;
-            margin: 0;
-            background: white;
-            padding: 0;
-        }
-
-        header {
-            box-shadow: none;
-            border: none;
-            margin: 0 0 16px 0;
-            padding: 16px;
-            page-break-inside: avoid;
-            page-break-after: avoid;
-        }
-
-        .section {
-            box-shadow: none;
-            border: none;
-            margin: 0 0 16px 0;
-            padding: 16px;
-            page-break-inside: avoid;
-        }
-
-        .section-title {
-            page-break-after: avoid;
-        }
-
-        .timeline-item {
-            page-break-inside: avoid;
-        }
-
-        .curso-item {
-            page-break-inside: avoid;
-        }
-
-        .projeto-destaque {
-            box-shadow: none;
-            border: none;
-            margin: 0 0 16px 0;
-            padding: 16px;
-            page-break-inside: avoid;
-        }
-
-        .projeto-header {
-            page-break-after: avoid;
-        }
-
-        .projeto-list {
-            page-break-before: avoid;
-        }
-
-        .projeto-links {
-            page-break-before: avoid;
-        }
-
-        .export-btn {
-            display: none !important;
-        }
-
-        /* Garantir que links funcionem no PDF */
-        a {
-            color: #007AFF !important;
-            text-decoration: none !important;
-        }
-
-        a[href^="http"]::after,
-        a[href^="mailto"]::after {
-            content: "" !important;
-        }
-
-        /* Forçar impressão correta dos links */
-        .projeto-link,
-        .contact-info a {
-            color: #007AFF !important;
-            text-decoration: underline !important;
-        }
     }
 
     .container {
@@ -123,7 +31,7 @@
     /* Header Simples */
     header {
         background: white;
-        padding: 24px 20px 20px 20px;
+        padding: 20px;
         margin: 16px 16px 12px 16px;
         border-radius: 12px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 
@@ -141,16 +49,16 @@
         font-size: 0.95em;
         color: #86868b;
         font-weight: 400;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
 
     /* Info de Contato Simples */
     .contact-info {
         display: grid;
-        gap: 8px;
-        font-size: 0.9em;
+        gap: 6px;
+        font-size: 0.88em;
         color: #1d1d1f;
-        padding-top: 12px;
+        padding-top: 10px;
         border-top: 1px solid #e5e5e7;
     }
 
@@ -169,11 +77,11 @@
         text-decoration: none;
     }
 
-    /* Seções com Sombras Suaves */
+    /* Seções Compactas */
     .section {
         background: white;
         border-radius: 12px;
-        padding: 20px;
+        padding: 18px;
         margin: 0 16px 12px 16px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 
                     0 2px 8px rgba(0, 0, 0, 0.04);
@@ -185,28 +93,30 @@
 
     /* Section Titles */
     .section-title {
-        font-size: 0.75em;
+        font-size: 0.72em;
         color: #86868b;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         font-weight: 500;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     /* Resumo Section */
     .resumo-text {
         color: #1d1d1f;
-        font-size: 0.95em;
-        line-height: 1.6;
-        margin-bottom: 16px;
+        font-size: 0.92em;
+        line-height: 1.5;
+        margin-bottom: 12px;
     }
 
     .resumo-highlight {
         background: linear-gradient(135deg, rgba(0, 122, 255, 0.05) 0%, rgba(0, 122, 255, 0.02) 100%);
-        padding: 16px;
+        padding: 12px;
         border-radius: 8px;
         border-left: 3px solid #007AFF;
-        margin-top: 12px;
+        margin-top: 10px;
+        font-size: 0.9em;
+        line-height: 1.5;
     }
 
     .resumo-highlight strong {
@@ -214,57 +124,53 @@
         font-weight: 600;
     }
 
-    /* Timeline iOS Style */
+    /* Timeline Compacto */
     .timeline-item {
-        padding: 20px 0;
+        padding: 14px 0;
         border-bottom: 1px solid #e5e5e7;
     }
 
     .timeline-item:last-child {
         border-bottom: none;
+        padding-bottom: 0;
     }
 
-    .timeline-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 8px;
+    .timeline-item:first-child {
+        padding-top: 0;
     }
 
     .timeline-title {
-        font-size: 1em;
+        font-size: 0.95em;
         font-weight: 600;
         color: #1d1d1f;
         margin-bottom: 4px;
     }
 
     .timeline-company {
-        font-size: 0.9em;
+        font-size: 0.88em;
         color: #007AFF;
         font-weight: 500;
+        margin-bottom: 2px;
     }
 
     .timeline-date {
-        font-size: 0.85em;
+        font-size: 0.82em;
         color: #86868b;
-        white-space: nowrap;
-        margin-left: 12px;
-    }
-
-    .timeline-description {
-        margin-top: 12px;
+        margin-bottom: 8px;
     }
 
     .timeline-list {
         list-style: none;
         padding: 0;
+        margin-top: 8px;
     }
 
     .timeline-list li {
-        padding: 6px 0 6px 20px;
-        font-size: 0.9em;
+        padding: 4px 0 4px 18px;
+        font-size: 0.88em;
         color: #1d1d1f;
         position: relative;
+        line-height: 1.4;
     }
 
     .timeline-list li::before {
@@ -275,39 +181,38 @@
         font-weight: bold;
     }
 
-    /* Curso Items */
+    /* Curso Items Compactos */
     .curso-list {
         display: grid;
-        gap: 12px;
-        margin-top: 16px;
+        gap: 10px;
     }
 
     .curso-item {
         background: linear-gradient(135deg, rgba(0, 122, 255, 0.03) 0%, rgba(0, 122, 255, 0.01) 100%);
-        padding: 16px;
-        border-radius: 10px;
+        padding: 12px;
+        border-radius: 8px;
         border-left: 3px solid #007AFF;
     }
 
     .curso-title {
-        font-size: 0.95em;
+        font-size: 0.9em;
         font-weight: 600;
         color: #1d1d1f;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
     }
 
     .curso-institution {
-        font-size: 0.85em;
+        font-size: 0.82em;
         color: #86868b;
     }
 
-    /* Projeto Destaque - Stage Display Style */
+    /* Projeto Destaque Compacto */
     .projeto-destaque {
         background: linear-gradient(135deg, 
             rgba(255, 255, 255, 0.95) 0%, 
             rgba(245, 245, 247, 0.98) 100%);
         backdrop-filter: blur(10px);
-        padding: 24px;
+        padding: 20px;
         border-radius: 16px;
         margin: 12px 16px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08),
@@ -318,25 +223,18 @@
     .projeto-header {
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 16px;
+        gap: 14px;
+        margin-bottom: 12px;
     }
 
     .projeto-logo {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         background: white;
-        border-radius: 12px;
-        padding: 8px;
+        border-radius: 10px;
+        padding: 6px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         flex-shrink: 0;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-
-    .projeto-logo:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .projeto-logo img {
@@ -346,29 +244,31 @@
     }
 
     .projeto-title-text {
-        font-size: 1.1em;
+        font-size: 1.05em;
         font-weight: 600;
         color: #1d1d1f;
         line-height: 1.3;
     }
 
     .projeto-description {
-        font-size: 0.9em;
+        font-size: 0.88em;
         color: #1d1d1f;
-        line-height: 1.6;
-        margin-bottom: 16px;
+        line-height: 1.5;
+        margin-bottom: 12px;
     }
 
     .projeto-list {
         list-style: none;
         padding: 0;
+        margin-bottom: 14px;
     }
 
     .projeto-list li {
-        padding: 8px 0 8px 24px;
-        font-size: 0.9em;
+        padding: 5px 0 5px 20px;
+        font-size: 0.88em;
         color: #1d1d1f;
         position: relative;
+        line-height: 1.4;
     }
 
     .projeto-list li::before {
@@ -379,17 +279,43 @@
         font-weight: bold;
     }
 
-    /* Footer */
-    footer {
-        margin-top: 24px;
-        border-radius: 12px 12px 0 0;
-        overflow: hidden;
+    /* Grid de Links de Projetos Compacto */
+    .projeto-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-top: 12px;
     }
 
-    .footer-banner img {
-        width: 100%;
-        height: auto;
-        display: block;
+    .projeto-link {
+        background: linear-gradient(135deg, rgba(0, 122, 255, 0.03) 0%, rgba(0, 122, 255, 0.01) 100%);
+        border: 1px solid rgba(0, 122, 255, 0.1);
+        border-radius: 8px;
+        padding: 10px 12px;
+        text-decoration: none;
+        color: #007AFF;
+        font-size: 0.82em;
+        font-weight: 500;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .projeto-link:hover {
+        background: rgba(0, 122, 255, 0.08);
+        border-color: rgba(0, 122, 255, 0.2);
+        transform: translateY(-1px);
+    }
+
+    .projeto-link span {
+        flex: 1;
+    }
+
+    .projeto-link::after {
+        content: '→';
+        font-size: 1.1em;
+        opacity: 0.6;
     }
 
     /* Botão de Exportação Discreto */
@@ -419,64 +345,99 @@
         transform: translateY(-2px);
     }
 
-    /* Grid de Links de Projetos */
-    .projeto-links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-top: 16px;
+    /* Configuração para Impressão PDF */
+    @page {
+        size: A4;
+        margin: 18mm 15mm;
     }
 
-    .projeto-link {
-        background: linear-gradient(135deg, rgba(0, 122, 255, 0.03) 0%, rgba(0, 122, 255, 0.01) 100%);
-        border: 1px solid rgba(0, 122, 255, 0.1);
-        border-radius: 10px;
-        padding: 12px 14px;
-        text-decoration: none;
-        color: #007AFF;
-        font-size: 0.85em;
-        font-weight: 500;
-        transition: all 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+    @media print {
+        body {
+            background: white;
+            margin: 0;
+            padding: 0;
+        }
 
-    .projeto-link:hover {
-        background: rgba(0, 122, 255, 0.08);
-        border-color: rgba(0, 122, 255, 0.2);
-        transform: translateY(-1px);
-    }
+        .container {
+            max-width: 100%;
+            margin: 0;
+            background: white;
+            padding: 0;
+        }
 
-    .projeto-link span {
-        flex: 1;
-    }
+        header {
+            box-shadow: none;
+            margin: 0 0 10px 0;
+            padding: 0;
+            page-break-after: avoid;
+        }
 
-    .projeto-link::after {
-        content: '→';
-        font-size: 1.1em;
-        opacity: 0.6;
+        .section {
+            box-shadow: none;
+            margin: 0 0 12px 0;
+            padding: 0 0 12px 0;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            page-break-after: avoid;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item {
+            page-break-inside: avoid;
+            padding: 10px 0;
+        }
+
+        .curso-item {
+            page-break-inside: avoid;
+        }
+
+        .projeto-destaque {
+            box-shadow: none;
+            margin: 0 0 12px 0;
+            padding: 0 0 12px 0;
+            page-break-inside: avoid;
+        }
+
+        .projeto-header {
+            page-break-after: avoid;
+        }
+
+        .projeto-links {
+            page-break-before: avoid;
+        }
+
+        .export-btn {
+            display: none !important;
+        }
+
+        /* Links funcionais no PDF */
+        a {
+            color: #007AFF !important;
+            text-decoration: underline !important;
+        }
+
+        a:link, a:visited {
+            color: #007AFF !important;
+        }
+
+        /* Forçar cor dos links específicos */
+        .contact-info a,
+        .projeto-link,
+        .timeline-company {
+            color: #007AFF !important;
+            text-decoration: none !important;
+        }
+
+        .projeto-link {
+            border: 1px solid rgba(0, 122, 255, 0.2);
+            page-break-inside: avoid;
+        }
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-        .header-info h1 {
-            font-size: 1.1em;
-        }
-
-        .header-info .subtitle {
-            font-size: 0.75em;
-        }
-
-        .timeline-header {
-            flex-direction: column;
-        }
-
-        .timeline-date {
-            margin-left: 0;
-            margin-top: 4px;
-        }
-
         .projeto-links {
             grid-template-columns: 1fr;
         }
@@ -521,50 +482,53 @@
         </div>
     </div>
 
-    <!-- Diferenciais + Competências Combinados -->
+    <!-- Diferenciais -->
     <div class="section">
         <div class="section-title">Diferenciais</div>
         
         <div class="timeline-item">
             <div class="timeline-title">Presença Técnica Eficiente</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Atuação constante em campo, oferecendo soluções práticas e orientações que fortalecem a confiança do produtor.</p>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Atuação constante em campo, oferecendo soluções práticas e orientações que fortalecem a confiança do produtor.</p>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-title">Gestão Estratégica de Metas</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Metas superadas de forma recorrente com planejamento semanal e foco em rentabilidade sustentável.</p>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Metas superadas de forma recorrente com planejamento semanal e foco em rentabilidade sustentável.</p>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-title">Manutenção e Expansão de Carteira</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Gestão de carteira fiel com ampliação anual de novos produtores cadastrados.</p>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Gestão de carteira fiel com ampliação anual de novos produtores cadastrados.</p>
         </div>
 
-        <div class="timeline-item" style="border-bottom: none; padding-bottom: 12px;">
+        <div class="timeline-item">
             <div class="timeline-title">Satisfação e Confiança dos Clientes</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Produtores buscam orientação técnica mesmo fora do meu portfólio, reforçando credibilidade e parceria.</p>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Produtores buscam orientação técnica mesmo fora do meu portfólio, reforçando credibilidade e parceria.</p>
         </div>
+    </div>
 
-        <div class="section-title" style="margin-top: 20px;">Competências</div>
+    <!-- Competências -->
+    <div class="section">
+        <div class="section-title">Competências</div>
         
         <div class="timeline-item">
-            <div class="timeline-title">Comunicação Assertiva & Relacionamento Interpessoal</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Tradução de conceitos técnicos em linguagem acessível e construção de vínculos sólidos baseados em confiança e resultados.</p>
+            <div class="timeline-title">Comunicação Assertiva & Relacionamento</div>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Tradução de conceitos técnicos em linguagem acessível e construção de vínculos sólidos baseados em confiança.</p>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-title">Organização, Planejamento & Proatividade</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Gerenciamento eficiente de múltiplas demandas com antecipação de necessidades e identificação de oportunidades.</p>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Gerenciamento eficiente de demandas com antecipação de necessidades e identificação de oportunidades.</p>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-title">Adaptabilidade & Aprendizado Contínuo</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Flexibilidade estratégica e busca constante por atualização técnica para agregar valor ao atendimento.</p>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Flexibilidade estratégica e busca constante por atualização técnica para agregar valor.</p>
         </div>
 
-        <div class="timeline-item" style="border-bottom: none;">
+        <div class="timeline-item">
             <div class="timeline-title">Orientação para Resultados & Trabalho em Equipe</div>
-            <p style="font-size: 0.9em; color: #1d1d1f; margin-top: 8px;">Foco em superar metas com planejamento estratégico e colaboração efetiva com equipes técnicas e comerciais.</p>
+            <p style="font-size: 0.88em; color: #1d1d1f; margin-top: 4px; line-height: 1.4;">Foco em superar metas com colaboração efetiva entre equipes técnicas e comerciais.</p>
         </div>
     </div>
 
@@ -573,56 +537,38 @@
         <div class="section-title">Experiência Profissional</div>
         
         <div class="timeline-item">
-            <div class="timeline-header">
-                <div>
-                    <div class="timeline-title">Representante Técnico de Vendas 3</div>
-                    <div class="timeline-company">Nutrien</div>
-                </div>
-                <div class="timeline-date">06/2022 – Atual</div>
-            </div>
-            <div class="timeline-description">
-                <ul class="timeline-list">
-                    <li>Atendimento técnico a produtores nas culturas de soja, milho e pastagem</li>
-                    <li>Posicionamento agronômico de produtos nutricionais e fisiológicos</li>
-                    <li>Gerenciamento de carteira ativa e planejamento de vendas</li>
-                    <li>Apoio técnico ao time comercial em campo</li>
-                </ul>
-            </div>
+            <div class="timeline-title">Representante Técnico de Vendas 3</div>
+            <div class="timeline-company">Nutrien</div>
+            <div class="timeline-date">06/2022 – Atual</div>
+            <ul class="timeline-list">
+                <li>Atendimento técnico a produtores nas culturas de soja, milho e pastagem</li>
+                <li>Posicionamento agronômico de produtos nutricionais e fisiológicos</li>
+                <li>Gerenciamento de carteira ativa e planejamento de vendas</li>
+                <li>Apoio técnico ao time comercial em campo</li>
+            </ul>
         </div>
 
         <div class="timeline-item">
-            <div class="timeline-header">
-                <div>
-                    <div class="timeline-title">Consultor Técnico de Vendas</div>
-                    <div class="timeline-company">Sulgoiano Agro</div>
-                </div>
-                <div class="timeline-date">02/2015 – 05/2022</div>
-            </div>
-            <div class="timeline-description">
-                <ul class="timeline-list">
-                    <li>Assistência técnica a produtores e visitas periódicas</li>
-                    <li>Geração de demanda por meio de demonstrações em lavoura</li>
-                    <li>Comercialização de insumos e prospecção de clientes</li>
-                    <li>Reforço da relação técnica-comercial com agricultores</li>
-                </ul>
-            </div>
+            <div class="timeline-title">Consultor Técnico de Vendas</div>
+            <div class="timeline-company">Sulgoiano Agro</div>
+            <div class="timeline-date">02/2015 – 05/2022</div>
+            <ul class="timeline-list">
+                <li>Assistência técnica a produtores e visitas periódicas</li>
+                <li>Geração de demanda por meio de demonstrações em lavoura</li>
+                <li>Comercialização de insumos e prospecção de clientes</li>
+                <li>Reforço da relação técnica-comercial com agricultores</li>
+            </ul>
         </div>
 
         <div class="timeline-item">
-            <div class="timeline-header">
-                <div>
-                    <div class="timeline-title">Assistente Técnico de Vendas</div>
-                    <div class="timeline-company">Sulgoiano Agro - Goiatuba/GO</div>
-                </div>
-                <div class="timeline-date">01/2013 – 02/2015</div>
-            </div>
-            <div class="timeline-description">
-                <ul class="timeline-list">
-                    <li>Tratamento de sementes e regulagem de implementos</li>
-                    <li>Suporte técnico ao consultor e acompanhamento de campo</li>
-                    <li>Geração de demanda inicial e ativação de produtores</li>
-                </ul>
-            </div>
+            <div class="timeline-title">Assistente Técnico de Vendas</div>
+            <div class="timeline-company">Sulgoiano Agro - Goiatuba/GO</div>
+            <div class="timeline-date">01/2013 – 02/2015</div>
+            <ul class="timeline-list">
+                <li>Tratamento de sementes e regulagem de implementos</li>
+                <li>Suporte técnico ao consultor e acompanhamento de campo</li>
+                <li>Geração de demanda inicial e ativação de produtores</li>
+            </ul>
         </div>
     </div>
 
@@ -630,13 +576,9 @@
     <div class="section">
         <div class="section-title">Formação Acadêmica</div>
         <div class="timeline-item">
-            <div class="timeline-header">
-                <div>
-                    <div class="timeline-title">Engenheiro Agrônomo</div>
-                    <div class="timeline-company">Unicerrado - Goiatuba</div>
-                </div>
-                <div class="timeline-date">2013</div>
-            </div>
+            <div class="timeline-title">Engenheiro Agrônomo</div>
+            <div class="timeline-company">Unicerrado - Goiatuba</div>
+            <div class="timeline-date">2013</div>
         </div>
     </div>
 
@@ -679,7 +621,7 @@
     <div class="projeto-destaque">
         <div class="section-title">Projeto em Destaque</div>
         <div class="projeto-header">
-            <a href="https://afonsoraudinei.github.io/" target="_blank" class="projeto-logo" style="text-decoration: none; display: block;">
+            <a href="https://afonsoraudinei.github.io/" target="_blank" class="projeto-logo">
                 <img src="logo.png" alt="Logo SoloForte">
             </a>
             <div class="projeto-title-text">
@@ -696,7 +638,7 @@
             <li>Projetei ferramentas práticas para uso em campo, aumentando produtividade e precisão no atendimento</li>
         </ul>
 
-        <div class="section-title" style="margin-top: 20px; margin-bottom: 12px;">Ferramentas Desenvolvidas</div>
+        <div class="section-title" style="margin-top: 14px; margin-bottom: 10px;">Ferramentas Desenvolvidas</div>
         <div class="projeto-links">
             <a href="https://afonsoraudinei.github.io/Relat-rio-/" target="_blank" class="projeto-link">
                 <span>Relatório Técnico</span>
