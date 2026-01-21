@@ -26,99 +26,53 @@
             background: transparent;
         }
 
-        /* Header Bar Idêntico */
+        /* Header Simples */
         header {
-            background: linear-gradient(180deg, #2c2c2e 0%, #1c1c1e 100%);
-            color: white;
-            padding: 12px 16px 8px 16px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-        }
-
-        .header-top {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-box {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, rgba(52, 199, 89, 0.15) 0%, rgba(48, 176, 199, 0.15) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .header-info {
-            flex: 1;
+            background: white;
+            padding: 24px 20px 20px 20px;
+            margin: 16px 16px 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 
+                        0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .header-info h1 {
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-weight: 600;
-            margin-bottom: 1px;
-            letter-spacing: -0.3px;
+            margin-bottom: 4px;
+            color: #1d1d1f;
         }
 
         .header-info .subtitle {
-            font-size: 0.8em;
+            font-size: 0.95em;
             color: #86868b;
             font-weight: 400;
+            margin-bottom: 16px;
         }
 
-        .qr-box {
-            width: 44px;
-            height: 44px;
-            background: white;
-            border-radius: 8px;
-            padding: 3px;
-            flex-shrink: 0;
+        /* Info de Contato Simples */
+        .contact-info {
+            display: grid;
+            gap: 8px;
+            font-size: 0.9em;
+            color: #1d1d1f;
+            padding-top: 12px;
+            border-top: 1px solid #e5e5e7;
         }
 
-        .qr-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .action-buttons {
+        .contact-info div {
             display: flex;
             gap: 8px;
         }
 
-        .btn-action {
-            flex: 1;
-            padding: 10px 16px;
-            border: none;
-            border-radius: 10px;
-            font-size: 0.9em;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
+        .contact-info span {
+            color: #86868b;
+            min-width: 80px;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            backdrop-filter: blur(10px);
+        .contact-info a {
+            color: #007AFF;
+            text-decoration: none;
         }
 
         /* Seções com Sombras Suaves */
@@ -145,38 +99,6 @@
             margin-bottom: 12px;
         }
 
-        /* Form Rows Minimalistas */
-        .info-row {
-            display: flex;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #e5e5e7;
-        }
-
-        .info-row:last-child {
-            border-bottom: none;
-        }
-
-        .info-label {
-            width: 100px;
-            color: #1d1d1f;
-            font-size: 0.95em;
-            font-weight: 400;
-            flex-shrink: 0;
-        }
-
-        .info-value {
-            flex: 1;
-            text-align: right;
-            color: #86868b;
-            font-size: 0.95em;
-        }
-
-        .info-value a {
-            color: #007AFF;
-            text-decoration: none;
-        }
-
         /* Resumo Section */
         .resumo-text {
             color: #1d1d1f;
@@ -196,50 +118,6 @@
         .resumo-highlight strong {
             color: #007AFF;
             font-weight: 600;
-        }
-
-        /* Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .card-item {
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.95) 0%, 
-                rgba(245, 245, 247, 0.98) 100%);
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-        }
-
-        .card-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        }
-
-        .card-icon {
-            font-size: 2em;
-            margin-bottom: 8px;
-        }
-
-        .card-title {
-            font-size: 0.85em;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 6px;
-        }
-
-        .card-description {
-            font-size: 0.75em;
-            color: #86868b;
-            line-height: 1.4;
         }
 
         /* Timeline iOS Style */
@@ -430,10 +308,6 @@
                 font-size: 0.75em;
             }
 
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
             .timeline-header {
                 flex-direction: column;
             }
@@ -447,36 +321,20 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header iOS Style -->
+        <!-- Header Simples -->
         <header>
-            <div class="header-top">
-                <div class="header-info">
-                    <h1>Raudinei Afonso S. Pereira</h1>
-                    <div class="subtitle">Representante técnico de vendas 3</div>
-                </div>
+            <div class="header-info">
+                <h1>Raudinei Afonso S. Pereira</h1>
+                <div class="subtitle">Representante técnico de vendas 3</div>
+            </div>
+
+            <div class="contact-info">
+                <div><span>Telefone:</span> +55 (63) 98437-6572</div>
+                <div><span>E-mail:</span> <a href="mailto:raudyneyb@icloud.com">raudyneyb@icloud.com</a></div>
+                <div><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/raudinei" target="_blank">linkedin.com/in/raudinei</a></div>
+                <div><span>Localização:</span> Porto Nacional, TO</div>
             </div>
         </header>
-
-        <!-- Informações de Contato -->
-        <div class="section">
-            <div class="section-title">Contato</div>
-            <div class="info-row">
-                <div class="info-label">Telefone</div>
-                <div class="info-value">+55 (63) 98437-6572</div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">E-mail</div>
-                <div class="info-value"><a href="/cdn-cgi/l/email-protection#186a796d7c61767d615870776c75797174367b7775"><span class="__cf_email__" data-cfemail="72001307160b1c170b321a1d061f131b1e5c111d1f">[email&#160;protected]</span></a></div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">LinkedIn</div>
-                <div class="info-value"><a href="https://www.linkedin.com/in/raudinei" target="_blank">www.linkedin.com/in/raudinei</a></div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Localização</div>
-                <div class="info-value">Porto Nacional, TO</div>
-            </div>
-        </div>
 
         <!-- Sobre Mim -->
         <div class="section">
@@ -631,55 +489,6 @@
             </div>
         </div>
 
-        <!-- Principais Conquistas -->
-        <div class="section">
-            <div class="section-title">Principais Conquistas</div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">Presença Técnica Eficiente</div>
-                    </div>
-                </div>
-                <div class="timeline-description">
-                    <p style="font-size: 0.9em; color: #1d1d1f;">Atuação constante em campo, oferecendo soluções práticas e orientações que fortalecem a confiança do produtor.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">Gestão Estratégica de Metas</div>
-                    </div>
-                </div>
-                <div class="timeline-description">
-                    <p style="font-size: 0.9em; color: #1d1d1f;">Metas superadas de forma recorrente com planejamento semanal e foco em rentabilidade sustentável.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">Manutenção e Expansão de Carteira</div>
-                    </div>
-                </div>
-                <div class="timeline-description">
-                    <p style="font-size: 0.9em; color: #1d1d1f;">Gestão de carteira fiel com ampliação anual de novos produtores cadastrados.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">Satisfação e Confiança dos Clientes</div>
-                    </div>
-                </div>
-                <div class="timeline-description">
-                    <p style="font-size: 0.9em; color: #1d1d1f;">Produtores buscam orientação técnica mesmo fora do meu portfólio, reforçando credibilidade e parceria.</p>
-                </div>
-            </div>
-        </div>
-
         <!-- Experiência Profissional -->
         <div class="section">
             <div class="section-title">Experiência Profissional</div>
@@ -787,7 +596,7 @@
             </div>
         </div>
 
-        <!-- Projeto em Destaque - Stage Display -->
+        <!-- Projeto em Destaque -->
         <div class="projeto-destaque">
             <div class="section-title">Projeto em Destaque</div>
             <div class="projeto-header">
@@ -805,4 +614,9 @@
                 <li>Desenvolvi soluções de IA e automação para análise de dados agronômicos e recomendações técnicas</li>
                 <li>Estruturei um mapa interativo de casos de sucesso, funcionando como vitrine digital regional</li>
                 <li>Implementei estratégias de monetização, integrando geração de leads e visibilidade comercial</li>
-                <li>Projet
+                <li>Projetei ferramentas práticas para uso em campo, aumentando produtividade e precisão no atendimento</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
