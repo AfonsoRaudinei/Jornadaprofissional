@@ -1,0 +1,151 @@
+/* Print Stylesheet for CV/Resume 
+ * Fixes print layout issues including blue links, page breaks, and UI elements
+ */
+
+@media print {
+  /* Page setup */
+  @page { 
+    size: auto; 
+    margin: 15mm; 
+  }
+
+  /* Normalize links - prevent hrefs from showing and remove blue color */
+  a { 
+    color: inherit !important; 
+    text-decoration: none !important; 
+  }
+  
+  a[href]:after { 
+    content: none !important; 
+  }
+
+  /* Prevent page breaks inside important blocks */
+  .avoid-page-break, 
+  article, 
+  section, 
+  .resume-item, 
+  .experience, 
+  .education,
+  .timeline-item,
+  .curso-item,
+  .projeto-destaque {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Prevent orphan headings */
+  h1, h2, h3, h4, 
+  .section-title,
+  .timeline-title,
+  .curso-title,
+  .projeto-title-text { 
+    page-break-after: avoid !important; 
+    page-break-before: avoid !important; 
+    break-after: avoid !important; 
+    break-before: avoid !important; 
+  }
+
+  /* Visual footer - note: not all browsers support position:fixed in print */
+  .print-footer {
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    border-top: 1px solid #ddd; 
+    height: 20mm;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 4mm 10mm; 
+    background: #fff;
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Prevent absolute positioned elements from floating during print */
+  .no-print-absolute * { 
+    position: static !important; 
+  }
+
+  /* Hide elements that shouldn't appear in print */
+  .no-print, 
+  .no-print *,
+  .export-btn,
+  button,
+  .nav,
+  .navigation,
+  .menu {
+    display: none !important;
+  }
+
+  /* Ensure proper colors in print */
+  body { 
+    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact;
+    color: #000; 
+    background: #fff !important; 
+  }
+
+  /* Remove shadows and gradients for cleaner print */
+  header,
+  .section,
+  .projeto-destaque {
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  /* Ensure proper spacing */
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+  }
+
+  .section {
+    margin: 0 0 12px 0;
+    padding: 0 0 12px 0;
+  }
+
+  .projeto-destaque {
+    margin: 0 0 12px 0;
+    padding: 12px 0;
+  }
+
+  /* Ensure course and timeline items don't break */
+  .curso-list,
+  .timeline-list {
+    page-break-inside: avoid !important;
+  }
+
+  /* Keep project links together */
+  .projeto-links {
+    page-break-before: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .projeto-link {
+    page-break-inside: avoid !important;
+  }
+
+  /* Remove hover effects and transitions */
+  * {
+    transition: none !important;
+  }
+
+  /* Ensure readable text */
+  .contact-info,
+  .timeline-date,
+  .curso-institution {
+    color: #333 !important;
+  }
+
+  /* Keep contact info together */
+  .contact-info {
+    page-break-inside: avoid !important;
+  }
+}
